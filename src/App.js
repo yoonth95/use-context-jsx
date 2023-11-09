@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import "./App.css";
 import Page from "./components/Page";
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
-  return <Page isDark={isDark} toggleThema={() => setIsDark(!isDark)} />;
+  return (
+    <Provider store={store}>
+      <Page />
+    </Provider>
+  )
 }
 
 export default App;
